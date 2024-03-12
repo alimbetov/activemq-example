@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  artemis:
+    container_name: activemq
+    image: apache/activemq-artemis:latest-alpine
+    ports:
+      - '8161:8161'
+      - '61616:61616'
+    environment:
+      ARTEMIS_USER: admin
+      ARTEMIS_PASSWORD: adminpass
+    volumes:
+      - /Users/rus/Documents/java fw/activemq/data:/data/activemq
+      - /Users/rus/Documents/java fw/activemq/log:/var/log/activemq
